@@ -1,0 +1,49 @@
+.dialog-container{
+    width: 300px;
+    padding: 15px;
+    margin: 15px auto;
+    background-color: #383838;
+    &-title{
+        
+        font-weight: bold;
+        margin: 4px 0;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+
+        *{
+            margin: 5px 0;
+            border: none;
+            padding: 7px;
+            border-radius: 5px;
+        }
+        input{
+            color: honeydew;
+            background-color: #383838;
+            outline: none;
+            font-size: larger;
+            border-radius: 0px;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            &:valid{
+                border-bottom: 1px solid greenyellow;
+            }
+            &:invalid{
+                border-bottom: 1px solid lightcoral;
+
+            }
+            
+        }
+
+        button{
+            background-color: #8dff8d;
+            margin: 7px 0;
+            width: 48%;
+            &[type='reset']{
+                margin-left: 2%;
+                background-color: lightcoral;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,125 @@
+.board{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .bucket {
+        min-width: 225px;
+        background-color: #383838;
+        padding: 10px;
+        margin: 5px 5px;
+        border-radius: 10px;
+        position: relative;
+
+        &__title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: inline;
+            margin-right: 60px;
+            // margin: 10px 0 20px;
+
+        }
+
+
+        .control_btn{
+            display: inline;
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            img{
+                height: 1.15rem;
+                filter: invert(0.6);
+                &:hover{
+                    filter: invert(1);
+                }
+            }
+        }
+        .control_btn ~ .control_btn {
+            margin-left: 4px;
+            right: 10px;
+        }
+        &__content {
+            margin: 10px 0px;
+            & > * ~ * {
+                margin-top: 10px;
+            }
+        }
+    } 
+
+}
+
+.add{
+    &-bucket{
+        font-size: large;
+        font-weight: 700;
+        background-color: #575757;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    &-card{
+        font-weight: 700;
+        background-color: #212121;
+        margin-top: 8px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+@keyframes glowing {
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(180deg);
+    }
+
+}
+
+.glow-icon
+{
+    animation: glowing 2.5s ease-in-out 0s infinite alternate-reverse none;
+    transition: all 0.5s;
+    &:hover{
+        filter: hue-rotate(0deg);
+        animation: none;
+        cursor: pointer;
+    }
+}
+
+.dialog-container{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: all 0.25s;
+    &.active{
+        transform: translate(-50%,-50%) scale(1);
+    }
+}
+
+.overlay{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.68);
+    opacity: 0;
+    pointer-events: none;
+    &.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+button,.btn{
+    // cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.2s;
+    &:hover{
+        // transform: scale(1.005) translateY(-2px);
+        opacity: 1;
+    }
+}
